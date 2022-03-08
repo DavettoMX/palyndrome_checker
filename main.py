@@ -1,19 +1,28 @@
-palabra = str(input())
-palyndrome = True
+# -----------------------------
+# Program: Palindrome Checker
+# Author: Joshue Garcia
+# -----------------------------
 
-# Take the First Index of the word
+# User input the word to check
+word = str(input("Enter a word to check if it is a palindrome: "))
+
+# Take the first index and the last index of the word
 left_index = 0
-# Take the Last Index of the word
-rigth_index = len(palabra) - 1
+right_index = len(word) - 1
 
-while (left_index < rigth_index):
-    if palabra[left_index] != palabra[rigth_index]:
-        # if the word didn't match in both indexes it will not be a palyndrome
+# While loop to check if the word is a palindrome
+while (left_index < right_index):
+    # Convert the word to lowercase
+    word = word.lower()
+    palyndrome = True
+
+    if word[left_index] != word[right_index]:
         palyndrome = False
         break
     else:
-        # if both indexes match, the word will be cut while true
         left_index += 1
-        rigth_index -= 1
-    
+        right_index -= 1
+
+
+# Print the result
 print(palyndrome)
