@@ -6,23 +6,27 @@
 # User input the word to check
 word = str(input("Enter a word to check if it is a palindrome: "))
 
-# Take the first index and the last index of the word
-left_index = 0
-right_index = len(word) - 1
+def palyndrome(s):
+    # Remove spaces an turn the word into lowercase
+    s = s.lower()
+    s = s.replace(" ", "")
+    
+    # Takes first and last input
+    left = 0
+    right = len(s) - 1
 
-# While loop to check if the word is a palindrome
-while (left_index < right_index):
-    # Convert the word to lowercase
-    word = word.lower()
-    palyndrome = True
-
-    if word[left_index] != word[right_index]:
-        palyndrome = False
-        break
-    else:
-        left_index += 1
-        right_index -= 1
+    # Compare the first letter with the last letter.
+    while left < right:
+        # if letters not the same, the loop breaks else will compare the next letters
+        if s[left] != s[right]:
+            return False
+        else:
+            left += 1
+            right -= 1
+    return True
 
 
 # Print the result
-print(palyndrome)
+
+print(palyndrome('Anita lava la tina')) # True
+print(palyndrome('Avengers Assemble')) # False
